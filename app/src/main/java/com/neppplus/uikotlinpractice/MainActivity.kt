@@ -5,6 +5,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.neppplus.uikotlinpractice.databinding.ActivityMainBinding
+import android.util.Log
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,6 +42,11 @@ class MainActivity : AppCompatActivity() {
 
         // 이제부터 binding 바인딩 변수를 활용하여 마음 껏 xml 파일 내의 뷰 id 접근이 가능해집니다.
         // 뷰 id도 파스칼케이스 + 카멜케이스의 네이밍규칙 적용으로 인해서 tv_message -> tvMessage 로 자동 변환 되었습니다.
-//        binding.contentEdt
+        binding.okBtn.setOnClickListener{
+            val inputContent = binding.contentEdt.text.toString()
+            binding.resultTxt.text = inputContent
+        }
+
+
     }
 }
